@@ -77,14 +77,21 @@ namespace OmsLawCalculator
         private void calcCurrent_Click(object sender, EventArgs e)
         {
             Double answer;
-            Double voltage;
-            Double resistence;
+            Double voltage = 0;
+            Double resistence = 0;
 
-            voltage = Convert.ToDouble(currentV.Text);
-            resistence = Convert.ToDouble(currentR.Text);
+            try
+            {
+                voltage = Convert.ToDouble(currentV.Text);
+                resistence = Convert.ToDouble(currentR.Text);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Incorrect Input!");
+            }
 
             answer = voltage / resistence;
-            string displayAns = "Current = " + answer.ToString("N3") + "A";
+            string displayAns = "Current = " + String.Format("{0:0.###}",answer) + "A";
             ShowAnswerGB(displayAns);
             Console.WriteLine(answer);
         }
@@ -92,15 +99,22 @@ namespace OmsLawCalculator
         private void calcVoltage_Click(object sender, EventArgs e)
         {
             Double answer;
-            Double current;
-            Double resistence;
+            Double current = 0;
+            Double resistence = 0;
 
-            current = Convert.ToDouble(voltageI.Text);
-            resistence = Convert.ToDouble(voltageR.Text);
+            try
+            {
+                current = Convert.ToDouble(voltageI.Text);
+                resistence = Convert.ToDouble(voltageR.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Incorrect Input!");
+            }
 
             answer = current * resistence;
             answer.ToString("n3");
-            string displayAns = "Voltage = " + answer.ToString("N3") + "V";
+            string displayAns = "Voltage = " + String.Format("{0:0.###}", answer) + "V";
             ShowAnswerGB(displayAns);
             Console.WriteLine(answer);
         }
@@ -108,15 +122,22 @@ namespace OmsLawCalculator
         private void calcResistence_Click(object sender, EventArgs e)
         {
             Double answer;
-            Double voltage;
-            Double current;
+            Double voltage = 0;
+            Double current = 0;
 
-            voltage = Convert.ToDouble(resistenceV.Text);
-            current = Convert.ToDouble(resistenceI.Text);
+            try
+            {
+                voltage = Convert.ToDouble(resistenceV.Text);
+                current = Convert.ToDouble(resistenceI.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Incorrect Input!");
+            }
 
             answer = voltage / current;
             answer.ToString("n2");
-            string displayAns = "Resistence = " + answer.ToString("N3") + "Ω";
+            string displayAns = "Resistence = " + String.Format("{0:0.###}", answer) + "Ω";
             ShowAnswerGB(displayAns);
             Console.WriteLine(answer);
         }
