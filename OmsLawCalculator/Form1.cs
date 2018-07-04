@@ -76,19 +76,56 @@ namespace OmsLawCalculator
 
         private void calcCurrent_Click(object sender, EventArgs e)
         {
-            float answer;
-            //int voltage = Convert.ToInt32(currentV.Text);
-            //int resistence = Convert.ToInt32(currentR.Text);
+            Double answer;
+            Double voltage;
+            Double resistence;
 
-            //answer = voltage / resistence;
-            //answer.ToString("n3");
-            ShowAnswerGB();
+            voltage = Convert.ToDouble(currentV.Text);
+            resistence = Convert.ToDouble(currentR.Text);
+
+            answer = voltage / resistence;
+            string displayAns = "Current = " + answer.ToString("N3") + "A";
+            ShowAnswerGB(displayAns);
+            Console.WriteLine(answer);
         }
 
-        private void ShowAnswerGB()
+        private void calcVoltage_Click(object sender, EventArgs e)
+        {
+            Double answer;
+            Double current;
+            Double resistence;
+
+            current = Convert.ToDouble(voltageI.Text);
+            resistence = Convert.ToDouble(voltageR.Text);
+
+            answer = current * resistence;
+            answer.ToString("n3");
+            string displayAns = "Voltage = " + answer.ToString("N3") + "V";
+            ShowAnswerGB(displayAns);
+            Console.WriteLine(answer);
+        }
+
+        private void calcResistence_Click(object sender, EventArgs e)
+        {
+            Double answer;
+            Double voltage;
+            Double current;
+
+            voltage = Convert.ToDouble(resistenceV.Text);
+            current = Convert.ToDouble(resistenceI.Text);
+
+            answer = voltage / current;
+            answer.ToString("n2");
+            string displayAns = "Resistence = " + answer.ToString("N3") + "Ω";
+            ShowAnswerGB(displayAns);
+            Console.WriteLine(answer);
+        }
+
+        private void ShowAnswerGB(String vir)
         {
             AnswerGB.Show();
             this.Size = new Size(305, 323);
+            answerL.Text = vir;
         }
     }
 }

@@ -43,7 +43,7 @@
             this.voltageI = new System.Windows.Forms.TextBox();
             this.VoltL2 = new System.Windows.Forms.Label();
             this.AnswerGB = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.answerL = new System.Windows.Forms.Label();
             this.CurrentGB = new System.Windows.Forms.GroupBox();
             this.calcCurrent = new System.Windows.Forms.Button();
             this.currentR = new System.Windows.Forms.TextBox();
@@ -168,6 +168,7 @@
             this.calcVoltage.TabIndex = 27;
             this.calcVoltage.Text = "Calculate";
             this.calcVoltage.UseVisualStyleBackColor = true;
+            this.calcVoltage.Click += new System.EventHandler(this.calcVoltage_Click);
             // 
             // voltageR
             // 
@@ -214,7 +215,7 @@
             // 
             // AnswerGB
             // 
-            this.AnswerGB.Controls.Add(this.label14);
+            this.AnswerGB.Controls.Add(this.answerL);
             this.AnswerGB.Location = new System.Drawing.Point(12, 227);
             this.AnswerGB.Name = "AnswerGB";
             this.AnswerGB.Size = new System.Drawing.Size(265, 51);
@@ -222,14 +223,13 @@
             this.AnswerGB.TabStop = false;
             this.AnswerGB.Text = "Answer";
             // 
-            // label14
+            // answerL
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 13);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "label14";
+            this.answerL.AutoSize = true;
+            this.answerL.Location = new System.Drawing.Point(15, 25);
+            this.answerL.Name = "answerL";
+            this.answerL.Size = new System.Drawing.Size(0, 13);
+            this.answerL.TabIndex = 0;
             // 
             // CurrentGB
             // 
@@ -333,6 +333,7 @@
             this.calcResistence.TabIndex = 27;
             this.calcResistence.Text = "Calculate";
             this.calcResistence.UseVisualStyleBackColor = true;
+            this.calcResistence.Click += new System.EventHandler(this.calcResistence_Click);
             // 
             // resistenceI
             // 
@@ -432,7 +433,7 @@
         private System.Windows.Forms.TextBox voltageI;
         private System.Windows.Forms.Label VoltL2;
         private System.Windows.Forms.GroupBox AnswerGB;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label answerL;
         private System.Windows.Forms.Button calcVoltage;
         private System.Windows.Forms.GroupBox CurrentGB;
         private System.Windows.Forms.Button calcCurrent;
