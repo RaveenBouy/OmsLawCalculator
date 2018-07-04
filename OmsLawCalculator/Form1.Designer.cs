@@ -30,40 +30,40 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.GB1 = new System.Windows.Forms.GroupBox();
+            this.resistenceRB = new System.Windows.Forms.RadioButton();
+            this.currentRB = new System.Windows.Forms.RadioButton();
+            this.voltageRB = new System.Windows.Forms.RadioButton();
             this.VoltL1 = new System.Windows.Forms.Label();
             this.VoltageGB = new System.Windows.Forms.GroupBox();
-            this.VoltTB2 = new System.Windows.Forms.TextBox();
+            this.calcVoltage = new System.Windows.Forms.Button();
+            this.voltageR = new System.Windows.Forms.TextBox();
             this.VoltL4 = new System.Windows.Forms.Label();
             this.VoltL3 = new System.Windows.Forms.Label();
-            this.VoltTB1 = new System.Windows.Forms.TextBox();
+            this.voltageI = new System.Windows.Forms.TextBox();
             this.VoltL2 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AnswerGB = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.CalculateBtn = new System.Windows.Forms.Button();
             this.CurrentGB = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.calcCurrent = new System.Windows.Forms.Button();
+            this.currentR = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.currentV = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.ResistenceGB = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.calcResistence = new System.Windows.Forms.Button();
+            this.resistenceI = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.resistenceV = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.GB1.SuspendLayout();
             this.VoltageGB.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.AnswerGB.SuspendLayout();
             this.CurrentGB.SuspendLayout();
             this.ResistenceGB.SuspendLayout();
             this.SuspendLayout();
@@ -87,50 +87,53 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "V = IR         V=Voltage  I=Current  R=Resistence";
             // 
-            // groupBox2
+            // GB1
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 78);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 60);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Calculate";
+            this.GB1.Controls.Add(this.resistenceRB);
+            this.GB1.Controls.Add(this.currentRB);
+            this.GB1.Controls.Add(this.voltageRB);
+            this.GB1.Location = new System.Drawing.Point(12, 78);
+            this.GB1.Name = "GB1";
+            this.GB1.Size = new System.Drawing.Size(265, 60);
+            this.GB1.TabIndex = 1;
+            this.GB1.TabStop = false;
+            this.GB1.Text = "Calculate";
             // 
-            // radioButton3
+            // resistenceRB
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(174, 20);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(78, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Resistence";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.resistenceRB.AutoSize = true;
+            this.resistenceRB.Location = new System.Drawing.Point(174, 20);
+            this.resistenceRB.Name = "resistenceRB";
+            this.resistenceRB.Size = new System.Drawing.Size(78, 17);
+            this.resistenceRB.TabIndex = 2;
+            this.resistenceRB.TabStop = true;
+            this.resistenceRB.Text = "Resistence";
+            this.resistenceRB.UseVisualStyleBackColor = true;
+            this.resistenceRB.CheckedChanged += new System.EventHandler(this.ResistenceRBClicked);
             // 
-            // radioButton2
+            // currentRB
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(87, 20);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(59, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Current";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.currentRB.AutoSize = true;
+            this.currentRB.Location = new System.Drawing.Point(87, 20);
+            this.currentRB.Name = "currentRB";
+            this.currentRB.Size = new System.Drawing.Size(59, 17);
+            this.currentRB.TabIndex = 1;
+            this.currentRB.TabStop = true;
+            this.currentRB.Text = "Current";
+            this.currentRB.UseVisualStyleBackColor = true;
+            this.currentRB.CheckedChanged += new System.EventHandler(this.CurrentRBClicked);
             // 
-            // radioButton1
+            // voltageRB
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Voltage";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.voltageRB.AutoSize = true;
+            this.voltageRB.Location = new System.Drawing.Point(7, 20);
+            this.voltageRB.Name = "voltageRB";
+            this.voltageRB.Size = new System.Drawing.Size(61, 17);
+            this.voltageRB.TabIndex = 0;
+            this.voltageRB.TabStop = true;
+            this.voltageRB.Text = "Voltage";
+            this.voltageRB.UseVisualStyleBackColor = true;
+            this.voltageRB.CheckedChanged += new System.EventHandler(this.VoltageRBClicked);
             // 
             // VoltL1
             // 
@@ -143,27 +146,36 @@
             // 
             // VoltageGB
             // 
-            this.VoltageGB.Controls.Add(this.CalculateBtn);
-            this.VoltageGB.Controls.Add(this.VoltTB2);
+            this.VoltageGB.Controls.Add(this.calcVoltage);
+            this.VoltageGB.Controls.Add(this.voltageR);
             this.VoltageGB.Controls.Add(this.VoltL4);
             this.VoltageGB.Controls.Add(this.VoltL3);
-            this.VoltageGB.Controls.Add(this.VoltTB1);
+            this.VoltageGB.Controls.Add(this.voltageI);
             this.VoltageGB.Controls.Add(this.VoltL2);
             this.VoltageGB.Controls.Add(this.VoltL1);
-            this.VoltageGB.Location = new System.Drawing.Point(12, 144);
+            this.VoltageGB.Location = new System.Drawing.Point(300, 201);
             this.VoltageGB.Name = "VoltageGB";
             this.VoltageGB.Size = new System.Drawing.Size(265, 77);
             this.VoltageGB.TabIndex = 4;
             this.VoltageGB.TabStop = false;
             this.VoltageGB.Text = "Substitute for the Formula";
             // 
-            // VoltTB2
+            // calcVoltage
             // 
-            this.VoltTB2.Location = new System.Drawing.Point(134, 36);
-            this.VoltTB2.Name = "VoltTB2";
-            this.VoltTB2.Size = new System.Drawing.Size(32, 20);
-            this.VoltTB2.TabIndex = 8;
-            this.VoltTB2.Text = " ";
+            this.calcVoltage.Location = new System.Drawing.Point(191, 34);
+            this.calcVoltage.Name = "calcVoltage";
+            this.calcVoltage.Size = new System.Drawing.Size(71, 23);
+            this.calcVoltage.TabIndex = 27;
+            this.calcVoltage.Text = "Calculate";
+            this.calcVoltage.UseVisualStyleBackColor = true;
+            // 
+            // voltageR
+            // 
+            this.voltageR.Location = new System.Drawing.Point(134, 36);
+            this.voltageR.Name = "voltageR";
+            this.voltageR.Size = new System.Drawing.Size(32, 20);
+            this.voltageR.TabIndex = 8;
+            this.voltageR.Text = " ";
             // 
             // VoltL4
             // 
@@ -183,13 +195,13 @@
             this.VoltL3.TabIndex = 6;
             this.VoltL3.Text = "X";
             // 
-            // VoltTB1
+            // voltageI
             // 
-            this.VoltTB1.Location = new System.Drawing.Point(74, 36);
-            this.VoltTB1.Name = "VoltTB1";
-            this.VoltTB1.Size = new System.Drawing.Size(32, 20);
-            this.VoltTB1.TabIndex = 5;
-            this.VoltTB1.Text = " ";
+            this.voltageI.Location = new System.Drawing.Point(74, 36);
+            this.voltageI.Name = "voltageI";
+            this.voltageI.Size = new System.Drawing.Size(32, 20);
+            this.voltageI.TabIndex = 5;
+            this.voltageI.Text = " ";
             // 
             // VoltL2
             // 
@@ -200,15 +212,15 @@
             this.VoltL2.TabIndex = 4;
             this.VoltL2.Text = "(I)";
             // 
-            // groupBox4
+            // AnswerGB
             // 
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Location = new System.Drawing.Point(12, 227);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(265, 51);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Answer";
+            this.AnswerGB.Controls.Add(this.label14);
+            this.AnswerGB.Location = new System.Drawing.Point(12, 227);
+            this.AnswerGB.Name = "AnswerGB";
+            this.AnswerGB.Size = new System.Drawing.Size(265, 51);
+            this.AnswerGB.TabIndex = 5;
+            this.AnswerGB.TabStop = false;
+            this.AnswerGB.Text = "Answer";
             // 
             // label14
             // 
@@ -219,47 +231,39 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "label14";
             // 
-            // CalculateBtn
-            // 
-            this.CalculateBtn.Location = new System.Drawing.Point(192, 34);
-            this.CalculateBtn.Name = "CalculateBtn";
-            this.CalculateBtn.Size = new System.Drawing.Size(71, 23);
-            this.CalculateBtn.TabIndex = 27;
-            this.CalculateBtn.Text = "Calculate";
-            this.CalculateBtn.UseVisualStyleBackColor = true;
-            // 
             // CurrentGB
             // 
-            this.CurrentGB.Controls.Add(this.button1);
-            this.CurrentGB.Controls.Add(this.textBox3);
+            this.CurrentGB.Controls.Add(this.calcCurrent);
+            this.CurrentGB.Controls.Add(this.currentR);
             this.CurrentGB.Controls.Add(this.label6);
             this.CurrentGB.Controls.Add(this.label7);
-            this.CurrentGB.Controls.Add(this.textBox4);
+            this.CurrentGB.Controls.Add(this.currentV);
             this.CurrentGB.Controls.Add(this.label8);
             this.CurrentGB.Controls.Add(this.label13);
-            this.CurrentGB.Location = new System.Drawing.Point(283, 23);
+            this.CurrentGB.Location = new System.Drawing.Point(299, 23);
             this.CurrentGB.Name = "CurrentGB";
             this.CurrentGB.Size = new System.Drawing.Size(265, 77);
             this.CurrentGB.TabIndex = 28;
             this.CurrentGB.TabStop = false;
             this.CurrentGB.Text = "Substitute for the Formula";
             // 
-            // button1
+            // calcCurrent
             // 
-            this.button1.Location = new System.Drawing.Point(140, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 23);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.calcCurrent.Location = new System.Drawing.Point(191, 34);
+            this.calcCurrent.Name = "calcCurrent";
+            this.calcCurrent.Size = new System.Drawing.Size(71, 23);
+            this.calcCurrent.TabIndex = 27;
+            this.calcCurrent.Text = "Calculate";
+            this.calcCurrent.UseVisualStyleBackColor = true;
+            this.calcCurrent.Click += new System.EventHandler(this.calcCurrent_Click);
             // 
-            // textBox3
+            // currentR
             // 
-            this.textBox3.Location = new System.Drawing.Point(74, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(32, 20);
-            this.textBox3.TabIndex = 18;
-            this.textBox3.Text = " ";
+            this.currentR.Location = new System.Drawing.Point(74, 52);
+            this.currentR.Name = "currentR";
+            this.currentR.Size = new System.Drawing.Size(32, 20);
+            this.currentR.TabIndex = 18;
+            this.currentR.Text = " ";
             // 
             // label6
             // 
@@ -275,17 +279,17 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(106, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(16, 13);
+            this.label7.Size = new System.Drawing.Size(20, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "(I)";
+            this.label7.Text = "(V)";
             // 
-            // textBox4
+            // currentV
             // 
-            this.textBox4.Location = new System.Drawing.Point(74, 23);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(32, 20);
-            this.textBox4.TabIndex = 11;
-            this.textBox4.Text = " ";
+            this.currentV.Location = new System.Drawing.Point(74, 23);
+            this.currentV.Name = "currentV";
+            this.currentV.Size = new System.Drawing.Size(32, 20);
+            this.currentV.TabIndex = 11;
+            this.currentV.Text = " ";
             // 
             // label8
             // 
@@ -307,36 +311,36 @@
             // 
             // ResistenceGB
             // 
-            this.ResistenceGB.Controls.Add(this.button2);
-            this.ResistenceGB.Controls.Add(this.textBox5);
+            this.ResistenceGB.Controls.Add(this.calcResistence);
+            this.ResistenceGB.Controls.Add(this.resistenceI);
             this.ResistenceGB.Controls.Add(this.label9);
             this.ResistenceGB.Controls.Add(this.label10);
-            this.ResistenceGB.Controls.Add(this.textBox6);
+            this.ResistenceGB.Controls.Add(this.resistenceV);
             this.ResistenceGB.Controls.Add(this.label11);
             this.ResistenceGB.Controls.Add(this.label12);
-            this.ResistenceGB.Location = new System.Drawing.Point(283, 117);
+            this.ResistenceGB.Location = new System.Drawing.Point(299, 117);
             this.ResistenceGB.Name = "ResistenceGB";
             this.ResistenceGB.Size = new System.Drawing.Size(265, 77);
             this.ResistenceGB.TabIndex = 29;
             this.ResistenceGB.TabStop = false;
             this.ResistenceGB.Text = "Substitute for the Formula";
             // 
-            // button2
+            // calcResistence
             // 
-            this.button2.Location = new System.Drawing.Point(156, 35);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 23);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Calculate";
-            this.button2.UseVisualStyleBackColor = true;
+            this.calcResistence.Location = new System.Drawing.Point(191, 34);
+            this.calcResistence.Name = "calcResistence";
+            this.calcResistence.Size = new System.Drawing.Size(71, 23);
+            this.calcResistence.TabIndex = 27;
+            this.calcResistence.Text = "Calculate";
+            this.calcResistence.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // resistenceI
             // 
-            this.textBox5.Location = new System.Drawing.Point(93, 51);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(32, 20);
-            this.textBox5.TabIndex = 24;
-            this.textBox5.Text = " ";
+            this.resistenceI.Location = new System.Drawing.Point(93, 51);
+            this.resistenceI.Name = "resistenceI";
+            this.resistenceI.Size = new System.Drawing.Size(32, 20);
+            this.resistenceI.TabIndex = 24;
+            this.resistenceI.Text = " ";
             // 
             // label9
             // 
@@ -356,13 +360,13 @@
             this.label10.TabIndex = 21;
             this.label10.Text = "(V)";
             // 
-            // textBox6
+            // resistenceV
             // 
-            this.textBox6.Location = new System.Drawing.Point(93, 22);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(32, 20);
-            this.textBox6.TabIndex = 20;
-            this.textBox6.Text = " ";
+            this.resistenceV.Location = new System.Drawing.Point(93, 22);
+            this.resistenceV.Name = "resistenceV";
+            this.resistenceV.Size = new System.Drawing.Size(32, 20);
+            this.resistenceV.TabIndex = 20;
+            this.resistenceV.Text = " ";
             // 
             // label11
             // 
@@ -386,24 +390,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 285);
+            this.ClientSize = new System.Drawing.Size(576, 284);
             this.Controls.Add(this.ResistenceGB);
             this.Controls.Add(this.CurrentGB);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.AnswerGB);
             this.Controls.Add(this.VoltageGB);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.GB1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Oms\' Law Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.GB1.ResumeLayout(false);
+            this.GB1.PerformLayout();
             this.VoltageGB.ResumeLayout(false);
             this.VoltageGB.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.AnswerGB.ResumeLayout(false);
+            this.AnswerGB.PerformLayout();
             this.CurrentGB.ResumeLayout(false);
             this.CurrentGB.PerformLayout();
             this.ResistenceGB.ResumeLayout(false);
@@ -416,34 +420,34 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.GroupBox GB1;
+        private System.Windows.Forms.RadioButton resistenceRB;
+        private System.Windows.Forms.RadioButton currentRB;
+        private System.Windows.Forms.RadioButton voltageRB;
         private System.Windows.Forms.Label VoltL1;
         private System.Windows.Forms.GroupBox VoltageGB;
-        private System.Windows.Forms.TextBox VoltTB2;
+        private System.Windows.Forms.TextBox voltageR;
         private System.Windows.Forms.Label VoltL4;
         private System.Windows.Forms.Label VoltL3;
-        private System.Windows.Forms.TextBox VoltTB1;
+        private System.Windows.Forms.TextBox voltageI;
         private System.Windows.Forms.Label VoltL2;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox AnswerGB;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button CalculateBtn;
+        private System.Windows.Forms.Button calcVoltage;
         private System.Windows.Forms.GroupBox CurrentGB;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button calcCurrent;
+        private System.Windows.Forms.TextBox currentR;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox currentV;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox ResistenceGB;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button calcResistence;
+        private System.Windows.Forms.TextBox resistenceI;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox resistenceV;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
     }
